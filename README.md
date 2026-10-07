@@ -2,8 +2,6 @@
 
 Every release or push to your main branch becomes a changelog entry and ready-to-post launch updates, waiting in FoxPlug for you to approve.
 
-![A changelog written by FoxPlug from a repository's commits](docs/example-changelog.png)
-
 A live example: [FoxPlug's own changelog](https://foxplug.com/changelog/foxplug/?utm_source=github_marketplace&utm_medium=readme&utm_campaign=changelog_action), written by FoxPlug from its own commits.
 
 Free for one project.
@@ -17,7 +15,7 @@ Which one to use: this action sends each release or push into a FoxPlug project;
 3. Add this file as `.github/workflows/foxplug.yml`:
 
 ```yaml
-on: [push, release]
+on: { push: { branches: ['**'] }, release: { types: [published] } }
 jobs:
   foxplug:
     runs-on: ubuntu-latest
@@ -25,7 +23,11 @@ jobs:
       - { uses: OsakaSaul/foxplug-changelog-action@v1, with: { foxplug-token: "${{ secrets.FOXPLUG_TOKEN }}" } }
 ```
 
-That's it. The next push to your main branch or the next release shows up in FoxPlug as a draft.
+That's it. The next release shows up in FoxPlug as a draft and a changelog entry, waiting for you. Pushes are gathered by day: a single commit on its own waits until the next push that day joins it.
+
+What it looks like once you publish (a picture; the live page is linked above):
+
+[![A changelog written by FoxPlug from a repository's commits](docs/example-changelog.png)](https://foxplug.com/changelog/foxplug/?utm_source=github_marketplace&utm_medium=readme&utm_campaign=changelog_action "Open the live example changelog")
 
 ## What it does
 
