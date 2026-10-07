@@ -1,0 +1,27 @@
+name: FoxPlug Changelog and Launch Posts
+description: Every release or push becomes a changelog entry and ready-to-post launch updates, waiting for your approval.
+author: FoxPlug
+branding:
+  icon: rss
+  color: orange
+
+inputs:
+  foxplug-token:
+    description: Your FoxPlug project token. Add it to the repository's secrets as FOXPLUG_TOKEN and pass secrets.FOXPLUG_TOKEN here.
+    required: true
+  project:
+    description: Optional. The FoxPlug project name, as a check that the token belongs to the project you expect. The token alone decides where the update goes.
+    required: false
+    default: ""
+  github-token:
+    description: Used only to list the commits of a push larger than the event carries. The default workflow token is enough.
+    required: false
+    default: ${{ github.token }}
+
+outputs:
+  message:
+    description: What FoxPlug did with this run, in one sentence.
+
+runs:
+  using: node24
+  main: index.js
