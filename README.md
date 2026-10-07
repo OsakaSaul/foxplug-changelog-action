@@ -8,6 +8,8 @@ A live example: [FoxPlug's own changelog](https://foxplug.com/changelog/foxplug/
 
 Free for one project.
 
+Which one to use: this action sends each release or push into a FoxPlug project; [FoxPlug update writer](https://github.com/OsakaSaul/foxplug-action "The other FoxPlug action: a weekly update in your repository, no account") writes a weekly update into your repository with no account.
+
 ## Set it up
 
 1. **[Get your token](https://foxplug.com/app/?connect=github-action&utm_source=github_marketplace&utm_medium=readme&utm_campaign=changelog_action)**. This opens the GitHub Action row of your FoxPlug project (you sign up or sign in first if you need to). Press **Create a token**. It is shown once.
