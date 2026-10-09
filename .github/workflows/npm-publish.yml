@@ -36,5 +36,5 @@ jobs:
       - run: npm --version
       - name: Show what will be published
         run: npm pack --dry-run
-      - name: Publish (no token: npm trusted publishing)
+      - name: "Publish (no token, npm trusted publishing)"
         run: npm publish --access public
